@@ -1,0 +1,378 @@
+:root {
+    --red: #ff1e1e;
+    --black: #000;
+    --gray: #111;
+    --white: #fff;
+    --text: #ccc;
+    --accent: #ff4d4d;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--black);
+    color: var(--white);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+  
+  /* Header */
+  .header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 1000;
+    transition: background 0.3s ease;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--white);
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+  }
+  
+  .nav-links li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: var(--red);
+    transition: width 0.3s ease;
+  }
+  
+  .nav-links li a:hover::after {
+    width: 100%;
+  }
+  
+  .nav-links li a:hover {
+    color: var(--red);
+  }
+  
+  .btn-nav {
+    padding: 10px 20px;
+    border: 2px solid var(--red);
+    border-radius: 25px;
+    color: var(--white);
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-nav:hover {
+    background: var(--red);
+    color: var(--white);
+  }
+  
+  .nav-toggle {
+    display: none;
+    font-size: 1.8rem;
+    color: var(--white);
+    cursor: pointer;
+  }
+  
+  /* Hero */
+  .hero {
+    position: relative;
+    height: 60vh;
+    overflow: hidden;
+  }
+  
+  .hero-video {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--black), var(--gray));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero-overlay {
+    text-align: center;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .hero-overlay h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    color: var(--white);
+    text-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    margin-bottom: 15px;
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  .hero-overlay p {
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    color: var(--text);
+  }
+  
+  .cta-button {
+    background: var(--red);
+    color: var(--white);
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+  }
+  
+  .cta-button:hover {
+    background: var(--accent);
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.7);
+  }
+  
+  /* Contact Form */
+  .contact {
+    padding: 50px 5%;
+    background: var(--gray);
+    text-align: center;
+  }
+  
+  .contact h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.3rem;
+    color: var(--red);
+    margin-bottom: 40px;
+  }
+  
+  .contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .form-group {
+    width: 100%;
+    text-align: left;
+  }
+  
+  .form-group label {
+    font-size: 1.1rem;
+    color: var(--text);
+    margin-bottom: 8px;
+    display: block;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--text);
+    border-radius: 10px;
+    background: var(--black);
+    color: var(--white);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--red);
+    outline: none;
+  }
+  
+  .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  
+  .contact .cta-button {
+    width: 200px;
+    text-align: center;
+  }
+  
+  /* Footer */
+  .footer {
+    padding: 30px 5% 15px;
+    background: var(--gray);
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .footer-section h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.4rem;
+    color: var(--red);
+    margin-bottom: 15px;
+  }
+  
+  .footer-section p,
+  .footer-section ul {
+    color: var(--text);
+    font-size: 0.95rem;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 8px;
+  }
+  
+  .footer-section ul li a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-section ul li a:hover {
+    color: var(--red);
+  }
+  
+  .social-links a {
+    color: var(--white);
+    font-size: 1.4rem;
+    margin-right: 12px;
+    transition: color 0.3s ease;
+  }
+  
+  .social-links a:hover {
+    color: var(--red);
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding: 15px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 30px;
+  }
+  
+  .footer-bottom p {
+    color: var(--text);
+    font-size: 0.85rem;
+  }
+  
+  /* Animations */
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 10px rgba(255, 0, 0, 0.1);
+    }
+    to {
+      text-shadow: 0 0 50px rgba(255, 0, 0, 1.5);
+    }
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav-toggle {
+      display: block;
+    }
+  
+    .nav-links {
+      position: absolute;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      background: var(--black);
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 0;
+      display: none;
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  
+    .hero {
+      height: 50vh;
+    }
+  
+    .hero-overlay h1 {
+      font-size: 2.3rem;
+    }
+  
+    .hero-overlay p {
+      font-size: 1.1rem;
+    }
+  
+    .cta-button {
+      padding: 10px 25px;
+      font-size: 1rem;
+    }
+  
+    .contact h2 {
+      font-size: 2rem;
+    }
+  
+    .contact, .footer {
+      padding: 40px 5%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero {
+      height: 40vh;
+    }
+  
+    .hero-overlay h1 {
+      font-size: 1.8rem;
+    }
+  
+    .hero-overlay p {
+      font-size: 0.95rem;
+    }
+  
+    .contact, .footer {
+      padding: 30px 5%;
+    }
+  
+    .form-group label {
+      font-size: 1rem;
+    }
+  
+    .form-group input,
+    .form-group textarea {
+      padding: 10px;
+      font-size: 0.95rem;
+    }
+  }
