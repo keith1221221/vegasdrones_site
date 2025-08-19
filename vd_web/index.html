@@ -4,16 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vegas Drones | Spectacular Drone Light Shows in Las Vegas</title>
-
   <meta name="description" content="Experience breathtaking drone light shows in Las Vegas. Perfect for events, weddings, and brand promotions. Book now with Vegas Drones!" />
-  <meta name="keywords" content="drone light shows, Las Vegas, events, weddings, drone advertising"/>  
+  <meta name="keywords" content="drone light shows, Las Vegas, events, weddings, drone advertising"/>
   <meta property="og:title" content="Vegas Drones | Spectacular Drone Light Shows in Las Vegas" />
   <meta property="og:description" content="Experience breathtaking drone light shows in Las Vegas." />
   <meta property="og:url" content="https://vegasdrones.com/" />
   <meta property="og:image" content="https://vegasdrones.com/images/drone-light-show-las-vegas.jpg" />
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://vegasdrones.com/"/>
-
   <link rel="stylesheet" href="index.css" />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
@@ -23,7 +21,6 @@
   <header class="header">
     <nav class="navbar">
       <div class="logo"><span>VEGAS DRONES</span></div>
-      <div class="nav-toggle"><i class="fas fa-bars"></i></div>
       <ul class="nav-links">
         <li><a href="faq-las-vegas-drone-show.html">FAQs</a></li>
         <li><a href="#" onclick="openChat()">Get Quote</a></li>
@@ -31,16 +28,20 @@
       </ul>
     </nav>
   </header>
-
   <main>
     <section class="hero">
       <div class="hero-overlay">
         <h1>Illuminate the Night with Vegas Drones</h1>
-        <p>FAA-Certified Drone Light Shows for Weddings, Brands, and Events</p>
-        <a href="contact-las-vegas-drone-shows.html" class="cta-button">Book Your Show</a>
+        <p>FAA-Certified Drone Light Shows for Events, Conventions, and Weddings</p>
+        <div class="chat-launcher-wrapper">
+          <button id="chat-launcher" aria-label="Open chatbot">
+            <video id="alien-video" src="talking_alien_head.mov" muted preload="auto" playsinline></video>
+          </button>
+          <span class="chat-bubble">💬</span>
+        </div>
+        <p class="chat-instruction">Let the Vegas Drones assistant answer all your questions</p>
       </div>
     </section>
-
     <section class="features" id="features">
       <h2>Why Vegas Drones?</h2>
       <div class="feature-grid">
@@ -49,21 +50,18 @@
         <div class="feature-card"><i class="fas fa-star"></i><h3>Unforgettable Impact</h3><p>Captivate audiences with mesmerizing visuals that elevate your brand.</p></div>
       </div>
     </section>
-
     <section class="gallery">
       <h2>Our Spectacular Shows</h2>
       <div class="gallery-grid">
         <div class="gallery-item gallery-video"><iframe src="https://www.youtube.com/embed/bo3z1mTSc0s?rel=0" title="Vegas Drones Show" allowfullscreen loading="lazy"></iframe></div>
       </div>
     </section>
-
     <section class="cta-section">
       <h2>Ready to Light Up the Sky?</h2>
       <p>Contact us today to plan your custom drone light show in Las Vegas!</p>
       <a href="contact-las-vegas-drone-shows.html" class="cta-button">Get Started</a>
     </section>
   </main>
-
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-section">
@@ -75,7 +73,6 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="#" onclick="openChat()">Get Quote</a></li>
-          <li><a href="faq-las-vegas-drone-show.html">FAQs</a></li>
           <li><a href="contact-las-vegas-drone-shows.html">Contact</a></li>
         </ul>
       </div>
@@ -90,9 +87,7 @@
     </div>
     <div class="footer-bottom"><p>© 2025 Vegas Drones. All rights reserved.</p></div>
   </footer>
-
   <!-- Chatbot Embed -->
-  <button id="chat-launcher" aria-label="Open chatbot">💬</button>
   <div id="chat-iframe-container">
     <button id="chat-close" aria-label="Close chatbot">✕</button>
     <iframe
@@ -103,74 +98,11 @@
       title="Vegas Drones Chatbot"
       onerror="document.getElementById('chat-fallback').style.display = 'block';"
     ></iframe>
-    <div id="chat-fallback" style="display: none; color: white; padding: 20px; text-align: center;">
+    <div id="chat-fallback" style="display: none; background: #ffffff; color: #000000; padding: 20px; text-align: center;">
       Chatbot failed to load. Please check the console for errors (likely X-Frame-Options).
     </div>
   </div>
-
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script>
-    // Initialize AOS with error handling
-    if (typeof AOS !== 'undefined') {
-      AOS.init({ duration: 1000, once: true, disable: 'mobile' });
-    } else {
-      console.error('AOS library failed to load');
-    }
-  </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      console.log('Script loaded. Elements:', {
-        launcher: document.getElementById('chat-launcher'),
-        iframeContainer: document.getElementById('chat-iframe-container'),
-        chatClose: document.getElementById('chat-close'),
-        chatFallback: document.getElementById('chat-fallback')
-      });
-
-      const navToggle = document.querySelector('.nav-toggle');
-      const navLinks = document.querySelector('.nav-links');
-      const launcher = document.getElementById('chat-launcher');
-      const iframeContainer = document.getElementById('chat-iframe-container');
-      const chatClose = document.getElementById('chat-close');
-
-      // Toggle mobile navigation
-      if (navToggle && navLinks) {
-        navToggle.addEventListener('click', function() {
-          console.log('Nav toggle clicked');
-          navLinks.classList.toggle('active');
-        });
-      } else {
-        console.error('Nav toggle or links not found');
-      }
-
-      // Toggle chatbot visibility
-      function toggleChat() {
-        console.log('toggleChat called. Current display:', iframeContainer.style.display);
-        iframeContainer.style.display = iframeContainer.style.display === 'block' ? 'none' : 'block';
-      }
-
-      // Open chatbot on launcher click
-      if (launcher) {
-        launcher.addEventListener('click', function() {
-          console.log('Chat launcher clicked');
-          toggleChat();
-        });
-      } else {
-        console.error('Chat launcher not found');
-      }
-
-      // Close chatbot
-      if (chatClose) {
-        chatClose.addEventListener('click', function() {
-          console.log('Chat close clicked');
-          iframeContainer.style.display = 'none';
-        });
-      } else {
-        console.error('Chat close button not found');
-      }
-
-      // Expose toggleChat for "Get Quote" links
-      window.openChat = toggleChat;
-    });
-  </script>
+  <script defer src="scripts.js"></script>
 </body>
 </html>
