@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -91,14 +91,20 @@
   <!-- Chatbot Embed -->
   <div id="chat-iframe-container">
     <button id="chat-close" aria-label="Close chatbot">✕</button>
-    <iframe
-      src="http://https://vegasdrones-chatbot-quote-3sswbjo1g-vegas-drones.vercel.app/"
-      width="100%"
-      height="100%"
-      frameborder="0"
-      title="Vegas Drones Chatbot"
-      onerror="document.getElementById('chat-fallback').style.display = 'block';"
-    ></iframe>
+    <div id="chat-iframe-container">
+      <button id="chat-close" aria-label="Close chatbot">✕</button>
+      <iframe
+        src="https://vegasdrones-chatbot-quote-2fllu64pg-vegas-drones.vercel.app"
+        width="100%"
+        height="100%"
+        frameborder="0"
+        title="Vegas Drones Chatbot"
+        onerror="document.getElementById('chat-fallback').style.display = 'block';"
+      ></iframe>
+      <div id="chat-fallback" style="display: none; background: #ffffff; color: #000000; padding: 20px; text-align: center;">
+        Chatbot failed to load. Please try again later or contact support.
+      </div>
+    </div>
     <div id="chat-fallback" style="display: none; background: #ffffff; color: #000000; padding: 20px; text-align: center;">
       Chatbot failed to load. Please check the console for errors (likely X-Frame-Options).
     </div>
